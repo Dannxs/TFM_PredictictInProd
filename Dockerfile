@@ -4,6 +4,7 @@ COPY TaxiFareModel /TaxiFareModel
 COPY requirements.txt /requirements.txt
 COPY model.joblib /model.joblib
 COPY api /api
+COPY /home/danxs/code/Dannxs/gcp/spartan-tesla-328010-fa5283fe9ec6.json /spartan-tesla-328010-fa5283fe9ec6.json
 
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
