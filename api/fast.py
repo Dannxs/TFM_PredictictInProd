@@ -4,6 +4,8 @@ import pandas as pd
 from datetime import datetime
 import pytz
 from joblib import load
+import os
+
 
 app = FastAPI()
 
@@ -44,7 +46,7 @@ def predict(pickup_datetime, pickup_longitude, pickup_latitude,dropoff_longitude
     }
     
     X_pred = pd.DataFrame(data, index=[0])
-    model = load('/home/danxs/code/Dannxs/TFM_PredictInProd/model.joblib') 
+    model = load(os.path.dirname(__file__) + '/../model.joblib')
     prediction = model.predict(X_pred)[0]
     
     return {"prediction":prediction}
